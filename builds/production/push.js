@@ -1,0 +1,1 @@
+self.addEventListener("push",function(e){console.log("hier");let i=e.data.json();if(console.log(i),"user-registration"===i.type){let t=i.user;e.waitUntil(self.registration.showNotification("Neur Nutzer :",{body:t.nickname+" hat sich registriert.",icon:"/images/icons/icon-64x64.png",tag:"user-registration",vibrate:[500,110,500,110,450,110,200,110,170,40,450,110,200,110]}))}});

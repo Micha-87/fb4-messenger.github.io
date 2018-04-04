@@ -1,0 +1,342 @@
+//Susy global Defaults ------------------------------------
+$susy: (
+        columns: 12,
+        gutters: .25,
+        gutter-position: after,
+        global-box-sizing: border-box,
+);
+
+@include border-box-sizing;
+
+//Breakpoints
+$xsmall: 0em;
+$small: 26em;
+$medium: 64.1em;
+//$large: 75em;
+
+//layout ------------------------------------
+.ng-view {
+  padding: 5px;
+  //Mobile Geräte
+  @include susy-breakpoint($xsmall) {
+    @include single-transition(all, 0.5s, ease-out); //Verbesserung des Übergangs von xsmall zu small
+    padding-top: 55px;
+    .card {
+      width: 26rem;
+
+      img {
+        width: 260px;
+      }
+    }
+
+    .user-list {
+      @include span(12 of 12);
+      height: 88.5vh;
+
+      .list-group {
+        height: auto;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        .list-group-item .badge {
+          top: 33%;
+          right: 5%;
+        }
+      }
+    }
+
+    .message-window {
+      @include span(12 of 12);
+      height: 67vh;
+
+      img {
+        width: 33px;
+        height: 33px;
+      }
+
+      ul li span {
+        @include calc(max-width, "100vw - 60vw");
+        @media screen and (max-width: $xsmall/3) {
+          @include calc(max-width, "100vw - 90vw");
+        }
+      }
+      display: none;
+    }
+
+    .user-info {
+      @include span(12 of 12);
+      @include calc(height, "100vh - 90vh");
+
+      img {
+        @include calc(width, "100vh - 92vh");
+        @include calc(height, "100vh - 92vh");
+      }
+
+      button {
+        @include calc(height, "100vh - 90vh");
+      }
+      display: none;
+    }
+    .input-area {
+      @include span(12 of 12);
+      textarea {
+        @include span(10 of 12);
+        @include calc(height, "100vh - 90vh");
+      }
+      #send {
+        @include span(2 of 12 last);
+        @include calc(height, "100vh - 89.9vh");
+      }
+      display: none;
+    }/*input-area*/
+
+    .td_nickname, .td_name, .td_email, .td_password, .th_nickname, .th_name, .th_email, .th_password,
+    .nicknameButton, .nameButton, .emailButton, .passwordButton{
+      font-size: 1.2rem;
+    }
+    .nicknameButton, .nameButton, .emailButton, .passwordButton{
+      float: right;
+    }
+
+    .fhNewsOffline {
+      font-size: 25px;
+    }
+  }/*xsmall*/
+
+  //Tablet
+  @include susy-breakpoint($small) {
+    @include single-transition(all, 0.5s, ease-out); //Verbesserung des Übergangs von xsmall zu small
+    padding-top: 70px;
+    .card {
+      width: 33rem;
+
+      img {
+        width: 22em;
+      }
+    }
+
+    .user-list {
+      @include span(5 of 12);
+      @include calc(height, "90vh - 8px");
+
+      .list-group {
+        .list-group-item .badge {
+          font-size: 2vw;
+          top: 33%;
+          right: 5%;
+        }
+      }
+      display: block;
+    }
+
+    .user-info {
+      @include span(7 of 12 last);
+      display: block;
+    }
+
+    .message-window {
+      @include span(7 of 12 last);
+      @include calc(height, "71vh - 25px");
+      ul li span {
+        @include calc(max-width, "100vw - 80vw");
+        @media screen and (max-width: $small/2) {
+          @include calc(max-width, "100vw - 92vw");
+        }
+      }
+      display: block;
+    }
+
+    .input-area {
+      @include span(7 of 12 last);
+      textarea {
+        @include span(10 of 12);
+      }
+      #send {
+        @include span(2 of 12 last);
+      }
+      display: block;
+    }/*input-area*/
+
+    .td_nickname, .td_name, .td_email, .td_password, .th_nickname, .th_name, .th_email, .th_password,
+    .nicknameButton, .nameButton, .emailButton, .passwordButton{
+      font-size: 1.5rem;
+    }
+    .nicknameButton, .nameButton, .emailButton, .passwordButton{
+      float: right;
+    }
+
+    .fhNewsOffline {
+      font-size: 40px;
+    }
+  }/*small*/
+
+  //Laptop+PC
+  @include susy-breakpoint($medium) {
+    @include single-transition(all, 0.5s, ease-out); //Verbesserung des Übergangs von small zu medium
+    padding-top: 205px;
+    .card {
+      width: 33rem;
+
+      img {
+        width: 22em;
+      }
+    }
+
+    .user-list {
+      @include span(4 of 12);
+      height: 68vh;
+
+      .list-group {
+        .list-group-item .badge {
+          font-size: 1.5vw;
+          top: 30%;
+          right: 5%;
+        }
+      }
+      display: block;
+    }
+
+    .user-info {
+      @include span(8 of 12 last);
+      display: block;
+    }
+
+    .message-window {
+      @include span(8 of 12 last);
+      @include calc(height, "48vh - 10px");
+      display: block;
+    }/*message-window*/
+
+    .input-area {
+      @include span(8 of 12 last);
+      textarea {
+        @include span(11 of 12);
+      }
+      #send {
+        @include span(1 of 12 last);
+      }
+      display: block;
+    } /*input-area*/
+
+    .fhNewsOffline {
+      font-size: 50px;
+    }/*fhNewsOffline*/
+  } /*medium*/
+} /*ng-view*/
+
+//Headers
+header {
+  .navbar {
+    //Mobile Geräte
+    @include susy-breakpoint($xsmall) {
+      background: $orange;
+      height: 50px;
+      img {
+        width: 50px;
+      }
+
+      .back, .back2 {
+        font-size: 25px;
+        padding: 0;
+      }
+
+      .user {
+        .user-name {
+          font-size: 5vw;
+        }
+        .badge {
+          font-size: 3vw;
+          margin-left: 8px;
+          margin-bottom: 4px;
+        }
+        img {
+          width: 40px;
+          height: 40px;
+        }/*img*/
+      }/*user*/
+    } /*xsmall*/
+
+    //Tablet
+    @include susy-breakpoint($small) {
+      height: 65px;
+      img {
+        width: 60px;
+      }
+
+      .back, .back2 {
+        font-size: 30px;
+      }
+
+      .user {
+        .user-name, .badge {
+          font-size: 1.5em;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+        }/*img*/
+        .badge {
+          font-size: 0.8em;
+          margin-left: 10px;
+        }/*badge*/
+      }/*user*/
+
+      padding: 5px 10px;
+    } /*small*/
+
+    //Laptop+PC
+    @include susy-breakpoint($medium) { //Das passiert beim Vergrößern des Fenster zum medium
+      @include single-transition(all, 0.5s, ease-out); //Verbesserung des Übergangs von small zu medium
+      width: 100%;
+      height: 200px;
+
+      @include backImage("../images/header/header.png");
+
+      padding: 30px 30px;
+
+      img {
+        width: 100px;
+      }
+
+      .img-rounded {
+        margin-bottom: 8px;
+      }
+
+      .back, .back2 {
+        position: absolute;
+        bottom: 0;
+        font-size: 50px;
+      }
+
+      .branding {
+        position: absolute;
+        bottom: 0;
+        margin-left: 80px;
+      }
+
+      .user {
+        .user-name {
+          font-size: 2.5em;
+        }
+
+        .badge {
+          font-size: 1em;
+          margin-left: 10px;
+        }
+
+        position: absolute;
+        bottom: 0;
+        margin-left: 200px;
+        img {
+          width: 86px;
+          height: 86px;
+        }
+      }
+    }/*medium*/
+  }/*navbar*/
+}/*header*/
+
+

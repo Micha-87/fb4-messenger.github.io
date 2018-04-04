@@ -1,0 +1,9 @@
+.idea/inspectionProfiles
+.idea/libraries
+.idea/FundE.iml
+.idea/workspace.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/watcherTasks.xml
+.sass-cache/
+node_modules/

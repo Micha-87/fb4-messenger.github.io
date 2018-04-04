@@ -1,0 +1,151 @@
+<br class="container" ng-controller="MainController">
+<h1 style="text-align: center">Meine Daten</h1>
+<div class="addImage">
+    <img style="width: 100px; border-radius: 5px" src="../images/standard_profile_image/standard_profile_image.png"
+         alt="profile image"></br>
+    <label class="btn btn-myButton glyphicon glyphicon-upload upload" style="font-size: 20px">
+        <input type="file" id="File" accept="image/*">
+    </label>
+</div>
+</br>
+<table class="table user-table">
+    <tbody>
+    <tr>
+        <th class="th_nickname" scope="row"><b>Nickname:</b></th>
+        <td class="td_nickname"></td>
+        <td><input class="btn btn-myButton nicknameButton" id="showNicknameModal" type="button" value="&Auml;ndern">
+        </td>
+    </tr>
+    <tr>
+        <th class="th_name" scope="row"><b>Name:</b></th>
+        <td class="td_name"></td>
+        <td class="button_td"><input class="btn btn-myButton nameButton" id="showNameModal" type="button"
+                                     value="&Auml;ndern"></td>
+    </tr>
+    <tr style="border: 0;">
+        <th class="th_email" scope="row"><b>E-mail:</b></th>
+        <td class="td_email"></td>
+        <td class="button_td"><input class="btn btn-myButton emailButton" id="showEmailModal" type="button"
+                                     value="&Auml;ndern"></td>
+    </tr>
+    <tr>
+        <th class="th_password" scope="row" style="border: 0;"><b>Passwort:</b></th>
+        <td class="td_password" style="color: #808080; border: 0;">*****</td>
+        <td class="button_td" style="border: 0;"><input class="btn btn-myButton passwordButton" id="showPasswordModal"
+                                                        type="button" value="&Auml;ndern"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="nicknameModal" data-color="green" ng-controller="ProfileController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form ng-submit="changeNickname()">
+                    <div class="form-group">
+                        <label for="new-nickname" class="col-form-label">Neuer Nickname:</label>
+                        <input type="text" class="form-control" ng-model="nickname" id="new-nickname" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-myButton">Speichern</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="nameModal" data-color="green" ng-controller="ProfileController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form ng-submit="changeName()">
+                    <div class="form-group">
+                        <label for="new-name" class="col-form-label">Neuer Name:</label>
+                        <input type="text" class="form-control" ng-model="name" id="new-name" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-myButton">Speichern</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="emailModal" data-color="green" ng-controller="ProfileController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form ng-submit="changeEmail()">
+                    <div class="form-group">
+                        <label for="new-email" class="col-form-label">Neue E-Mail-Adresse:</label>
+                        <input type="email" class="form-control" ng-model="email" id="new-email" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-myButton">Speichern</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="passwordModal" data-color="green" ng-controller="ProfileController">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <form ng-submit="changePassword()">
+                    <div class="form-group">
+                        <label for="current-password" class="col-form-label">Aktuelles Passwort:</label>
+                        <input type="password" class="form-control" ng-model="currentPassword" id="current-password"
+                               required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password" class="col-form-label">Neus Passwort:</label>
+                        <input type="password" class="form-control" ng-model="newPassword" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password-confirm" class="col-form-label">Neues Passwort wiederholen:</label>
+                        <input type="password" class="form-control" ng-model="confirmPassword" id="new-password-confirm"
+                               required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-myButton">Speichern</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="fhNewsModal" data-color="green">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body fhNewsBody scroll-style2">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <ul id="fhNews"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

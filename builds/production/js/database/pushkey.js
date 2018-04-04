@@ -1,0 +1,1 @@
+require("mongoose").model("Pushkeys");var mongoose=require("mongoose"),Pushkeys=mongoose.model("Pushkeys");module.exports={getPushKeys:function(e,o){Pushkeys.find({},function(e,s){e?(o.status(504),o.end(e)):o.end(JSON.stringify(s))})}};

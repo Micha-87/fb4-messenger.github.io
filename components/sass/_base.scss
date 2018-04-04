@@ -1,0 +1,671 @@
+//Body allgemein
+body {
+  background: $paleyellow;
+  font-family: DroidSerif;
+  font-size: 1.5rem;
+
+  //Vorschlag, die App dem Bildschirm hinzuzufügen
+  .install {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include span(11 of 12);
+    z-index: 1;
+  }
+  //Vorschlag, die App dem Bildschirm hinzuzufügen IOS
+  .ios-add-tohomescreen {
+    margin:0 auto;
+    position: absolute;
+    left: 0; bottom: 0; right: 0;
+
+    .bubble {
+      width: 10em;
+      border-radius: 10px;
+      padding: .5em;
+      margin: 2em auto;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, .7);
+      font-family: DroidSerif;
+      text-align: center;
+      color: $paleyellow;
+    }
+
+    .triangleDown {
+      margin:0 auto;
+      position: absolute;
+      left: 0; bottom: 0; right: 0;
+      width: 0;
+      height: 0;
+      border-top: 15px solid rgba(0, 0, 0, .7);
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      border-left: 15px solid transparent;
+    }
+  }
+
+  #messages span{
+    font-weight: 600;
+  }
+
+  input {
+    font-family: DroidSerif;
+    font-weight: 600;
+  }
+
+  textarea {
+    font-weight: 600;
+  }
+}
+
+.img-rounded {
+  display: inline-block;
+}
+
+//Login_Register Fenster
+//------------------------------
+.login_register {
+  width: 30rem;
+  height: 37rem;
+  border-radius: 10px;
+  padding: 14px 14px 0;
+  box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 5px auto;
+  background-color: rgba(0, 0, 0, .7);
+  float: none;
+
+  h1 {
+    color: $white;
+    font-weight: 600;
+  }
+
+  a, .stayLoggedIn, .newHere {
+    font-weight: 600;
+    color: $white;
+  }
+
+  .stayLoggedIn:hover, .text-right a:hover, .bottom a:hover {
+    color: $orange;
+  }
+
+  .bottom {
+    color: $white;
+    border-top: 1px solid #ddd;
+    margin-top: 4em;
+  }
+
+  .newHere {
+    padding-right: 10px;
+  }
+}
+
+//Buttonfarbe
+.btn-myButton {
+  background-color: $orange;
+  color: $white;
+}
+
+//Al
+.alert-myAlert {
+  width: 30rem;
+  color: $orange;
+  margin: 5px auto;
+  background-color: rgba(0, 0, 0, .7);
+  float: none;
+}
+
+//home
+//---------------------------------------------
+.user-list {
+  overflow-y: auto;
+  background-color: darken($paleyellow, 20%);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+
+  .search_user {
+    position: relative;
+    padding: 5px 5px;
+
+    i {
+      position: absolute;
+      right: 0;
+      padding: 15px 12px;
+      pointer-events: none;
+    }
+  }
+
+  .list-group {
+    padding: 5px 5px;
+
+    .chosen_user, .lastMessage {
+      position: absolute;
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    .lastMessage {
+      margin-top: 20px;
+    }
+
+    .list-group-item {
+      padding-left: 5px;
+      overflow: hidden;
+    }
+
+    .list-group-item .badge {
+      position: absolute;
+    }
+
+    .lastMessageTime{
+      margin-top: -8px;
+      margin-right: -8px;
+      float: right;
+      font-size: 10px;
+    }
+
+    .list-group-item.active {
+      background-color: $orange;
+      border-color: $orange;
+      outline: none;
+    }
+  }
+}
+
+// SCROLL-STYLE
+.scroll-style::-webkit-scrollbar-track, .scroll-style2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.scroll-style::-webkit-scrollbar, .scroll-style2::-webkit-scrollbar {
+  width: 12px;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: darken($paleyellow, 20%);
+}
+
+.scroll-style2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color:  rgba(0, 0, 0, .7);
+}
+
+.message-window {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: darken($paleyellow, 20%);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 5px;
+  margin-bottom: 5px;
+
+  ul li {
+    height: auto;
+    clear: both;
+    padding: 10px;
+  }
+
+  ul li span {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+    overflow-wrap: break-word;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+    p {
+      font-size: 10px;
+      float: right;
+      margin-left: 10px;
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+  }
+
+  //Message Date
+  ul .date_li{
+    text-align: center;
+    span {
+      padding: 2px;
+    }
+  }
+  ul li span.date {
+    color: $gray;
+    background-color: $white;
+    font-size: 1rem;
+    display: inline-block;
+
+   :after {
+     content: "";
+     display: inline-block;
+     position: absolute;
+     left: -8px;
+     top: 7px;
+     height: 0px;
+     width: 0px;
+     border-top: 8px solid transparent;
+     border-bottom: 8px solid transparent;
+     border-right: 8px solid $white;
+   }
+  }
+
+  //Message Bubble und Positionierung der Messages (Links oder Rechts)
+  ul li span.left, ul li span.left2 {
+    float: left;
+    margin-left: 10px;
+    color: $gray;
+    background-color: $white;
+    p{
+      color: $lightgray;
+    }
+  }
+
+  ul li span.left:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -8px;
+    top: 7px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid $white;
+  }
+
+  ul li span.left:before, ul li span.left2:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -9px;
+    top: 7px;
+    height: 0px;
+    width: 0px;
+  }
+
+  ul li span.right:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -8px;
+    top: 6px;
+    height: 0px;
+    width: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid $orange;
+  }
+
+  ul li span.right:before, ul li span.right2:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -9px;
+    top: 6px;
+    height: 0px;
+    width: 0px;
+  }
+
+  ul li span.right, ul li span.right2 {
+    float: right;
+    margin-right: 10px;
+    color: $paleyellow;
+    background-color: $orange;
+
+    p{
+      color: $paleyellow;
+    }
+  }
+}
+
+//Info zum gewählten User
+.user-info {
+  min-height: 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: $white;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+
+  img {
+    display: inline-block;
+    object-fit: contain;
+  }
+
+  p {
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .dropdown{
+    float: right;
+    button {
+      i{
+        margin-bottom: 15px;
+      }
+      outline: none;
+      border: 0;
+      background: transparent;
+    }
+    ul a:hover {
+      color: $orange;
+      background-color: transparent;
+    }
+    ul {
+      background-color: darken($paleyellow, 20%);
+    }
+    a {
+      color: $white;
+    }
+  }
+}
+
+.input-area {
+  textarea {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-color: darken($paleyellow, 20%);
+    resize: none;
+    border-radius: 5px;
+    border: none;
+  }
+
+  button {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-color: darken($paleyellow, 20%);
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+//about
+//----------------------------------------------
+.card {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin: 5px auto;
+  float: none;
+
+  img {
+    border-radius: 5px;
+  }
+
+  .card-body {
+    font-size: 1em;
+    padding: 1em;
+  }
+}
+
+//loader
+//----------------------------------------------
+.loader {
+  background-color: $blue;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader-text {
+  font-size: 1em;
+  color: white;
+  text-shadow: 1px 1px 4px black;
+}
+
+.progress {
+  width: 40%;
+  max-width: 200px;
+}
+
+//Navigation
+//-----------------------------------
+
+.navbar {
+  background-color: transparent;
+  border: none;
+  z-index: 99;
+
+  .user {
+    display: inline-block;
+    .user-name {
+      display: inline;
+      color: $white;
+      margin-left: 10px;
+    }
+
+    .current-user {
+      display: inline;
+      color: $white;
+      margin-left: 10px;
+    }
+
+    .current-user tbody > tr > th{
+      border: none;
+      padding: 0px;
+      margin-bottom: 5px;
+    }
+
+    .badge-success{
+      background-color: #00FF00;
+    }
+    .badge-danger{
+      background-color: red;
+    }
+  }
+
+  .branding {
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+
+  .back, .back2 {
+    display: inline-block;
+    color: $white;
+  }
+}
+
+.navbar-default .dropdown .caret {
+  width: 10px;
+  padding-bottom: 2px;
+}
+
+header .navbar-default .navbar-nav a {
+  color: $white;
+  padding: 5px 8px;
+}
+
+header .navbar-default .navbar-nav a:hover, header .navbar-default .navbar-nav .active a:hover, header .navbar-default .navbar-nav .dropdown a:hover, header .navbar-default .navbar-nav .dropdown .dropdown-menu a:hover {
+  color: $orange;
+}
+
+header .navbar-default .navbar-nav .dropdown .dropdown-menu a {
+  color: $white;
+}
+
+header .navbar-default .navbar-nav .dropdown .dropdown-toggle {
+  color: $white;
+  background: transparent;
+}
+
+header .navbar-default .navbar-nav .active {
+  font-weight: 600;
+  background: transparent;
+  color: $white;
+  text-shadow: none;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: $white;
+  background: transparent;
+}
+
+.navbar-default .navbar-nav .dropdown .dropdown-menu > .active > a, .navbar-default .navbar-nav .dropdown .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .dropdown .dropdown-menu > .active > a:focus {
+  color: $white;
+  background-color: transparent;
+}
+
+/**  Navbar Toggle **/
+//Farbe des icons im navbar-button
+header .navbar-default .navbar-toggle .icon-bar {
+  background-color: $white;
+}
+
+//Damit das Menü bei 1024 zusammenbricht
+@media (max-width: 1024px) {
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left, .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, .7);
+    overflow-x: hidden;
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+}
+//Das Gleiche für Dropdown
+@media (max-width: 1024px) {
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .navbar-nav .open .dropdown-menu > li > a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+
+header .navbar-nav .dropdown ul {
+  background-color: rgba(0, 0, 0, .7);
+}
+
+header .navbar-nav .dropdown .dropdown-menu li a:hover {
+  background: transparent;
+}
+
+header .navbar-collapse ul li span {
+  padding-right: .5em;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+}
+
+// Profile
+.user-table{
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 10px;
+  color: $white;
+}
+.user-table tbody > tr > th, .table tbody > tr > td{
+  border-bottom: 1px solid $orange;
+  padding: 10px 5px ;
+  vertical-align: middle;
+}
+
+.addImage{
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em
+}
+
+.upload{
+  margin-top: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+//Modal zentrieren
+.modal {
+  text-align: center;
+  .modal-content {
+    background-color: transparent;
+  }
+}
+
+.modal:before {
+  content: '';
+  height: 100%;
+  width: 1px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-dialog {
+  @include calc(width, "100vw - 20vw");
+  text-align: left;
+  margin: 10px auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+//Modal Background
+.modal  .modal-body, .modal  .modal-header{
+  color: $white;
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 5px;
+
+  span {
+    color: $white;
+  }
+}
+
+.fhNewsBody{
+  height: 350px;
+  overflow-y: auto;
+}
+

@@ -1,0 +1,29 @@
+// _mixins
+// ========
+
+//Setzen des Images im Header
+@mixin backImage($image) {
+  @include background(_linear_gradient(bottom left, rgba($darkblue, .6), rgba($darkblue, 0)),image-url($image));//Bild wird dem header hinzugefügt
+  //Positionierung des Bildes: Zentriert und deckt den Header ab
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//Anpassen der Höhe von Card-Elementen in Bezug auf Größe von Navbar
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

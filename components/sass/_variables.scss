@@ -1,0 +1,30 @@
+//_variables
+//===========================
+
+$white          : #FFFFFF;
+$lightgray      : #819090;
+$gray           : #708284;
+$mediumgray     : #536870;
+$darkgray       : #475B62;
+$darkblue       : #0A2933;
+$darkerblue     : #042029;
+$paleryellow    : #FCF4DC;
+$paleyellow     : #EAE3CB;
+$orange         : #FE7701;
+$red            : #D11C24;
+$pink           : #C61C6F;
+$purple         : #595AB7;
+$blue           : #2176C7;
+$cyan           : #259286;
+$green          : #00FF00;
+
+/*Font für alle Browser*/
+@font-face {
+  font-family: "DroidSerif";
+  src: url("../fonts/droid_serif/DroidSerif-Regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/droid_serif/DroidSerif-Regular.eot?#iefix") format("embedded-opentype"); /* IE6-IE8 */
+  src: url("../fonts/droid_serif/DroidSerif-Regular.woff2") format("woff2"); /* Super Modern Browsers */
+  src: url("../fonts/droid_serif/DroidSerif-Regular.woff") format("woff"); /* Pretty Modern Browsers */
+  src: url("../fonts/droid_serif/DroidSerif-Regular.ttf")  format("truetype"); /* Safari, Android, iOS */
+  src: url("../fonts/droid_serif/DroidSerif-Regular.svg#svgFontName") format("svg"); /* Legacy iOS */
+}
